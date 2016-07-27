@@ -8,6 +8,9 @@ var app        = express();
 var morgan     = require('morgan');
 var _          = require('underscore');
 var MongoClient = require('mongodb').MongoClient;
+//Access-Control-Allow-Origin
+var cors=require('cors');
+app.use(cors());
 
 //host and port from cli
 var hostIndex = _.indexOf(process.argv,"--host");

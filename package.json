@@ -40,6 +40,7 @@
     "karma-junit-reporter": "^0.4.1",
     "protractor": "^3.2.2",
     "mongodb":"*",
+    "cors":"*",
     "twit":"*"
 
   }
