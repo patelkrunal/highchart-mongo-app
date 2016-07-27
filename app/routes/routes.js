@@ -4,7 +4,6 @@
 
 //require everything that you need.
 var router = require('express').Router();
-var Indicative = new(require("indicative"));
 var _          = require('underscore');
 var MongoClient = require('mongodb').MongoClient;
 var MongoDB_URL= "mongodb://"+process.env.MONGO_UNAME+":"+process.env.MONGO_PASS+"@"+process.env.MONGO_URL+":"+process.env.MONGO_PORT+"/"+process.env.MONGO_DB;
