@@ -10,15 +10,20 @@ angular.module('myApp.graphView', ['ngRoute','highcharts-ng'])
 }])
 
 .controller('View1Ctrl', function($scope,$http,$routeParams) {
+    $scope.empty_graph=false;
     var graph_id = $routeParams.graph_id;
     if(graph_id!=null){
         $http.get("api/graph/"+graph_id)
           .then(function(response){
-              $scope.chartConfig = response.data.data;
+              if(response.status == 200)
+                $scope.chartConfig = response.data.data;
+
+          },
+          function(response){
+          //Error handling
+            if(response.status == 404)
+                $scope.empty_graph=true;
           });
-    }else{
-        //appropriate response when no graph id.
-        alert("no graph id");
     }
 
 

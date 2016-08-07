@@ -46,7 +46,7 @@ app.use('/api', router);
 
 var MongoDB_URL= "mongodb://"+process.env.MONGO_UNAME+":"+process.env.MONGO_PASS+"@"+process.env.MONGO_URL+":"+process.env.MONGO_PORT+"/"+process.env.MONGO_DB;
 MongoClient.connect(MongoDB_URL, function(err, database) {
-  // ... do something here
+
     if (err) return console.log(err)
     database.close();
   app.listen(app.get('port'), function(){

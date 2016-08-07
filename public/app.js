@@ -4,7 +4,6 @@
 angular.module('myApp', [
   'ngRoute',
   'myApp.graphView',
-  'myApp.view2',
   'myApp.version'
 ]).
 config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {

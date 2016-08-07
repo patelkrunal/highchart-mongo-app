@@ -1,1 +1,3 @@
-<highchart id="chart1" config="chartConfig"></highchart>
+
+<p ng-show="empty_graph">Please check graph ID in url.</p>
+<highchart ng-hide="empty_graph" id="chart1" config="chartConfig"></highchart>

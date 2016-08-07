@@ -46,7 +46,7 @@ var Tt = process.env.TWITTER_TOKEN;
                  if(graph_json_obj!=null)
                     res.json(graph_json_obj);
                  else
-                    res.json("Empty");
+                    res.send(404);
                });
 
             });
@@ -64,7 +64,6 @@ var Tt = process.env.TWITTER_TOKEN;
                         db.collection('graph').save(req.body.graph_object, function(err, result){
                            if (err) return console.log(err)
 
-                           console.log('saved to database')
                            res.send(201);
                          });
                    }
@@ -77,10 +76,8 @@ var Tt = process.env.TWITTER_TOKEN;
         });
 
 
-    // on routes that end in /Twitter
+    // on routes that end in /TwitterPost
         // ----------------------------------------------------
-
-
 
         router.route('/TwitterPost')
             .post(function(req, res) {
@@ -95,7 +92,7 @@ var Tt = process.env.TWITTER_TOKEN;
                 res.send(200);
             }
             else
-                res.send(401);
+                res.send(404);
             });
 
 module.exports = router;
